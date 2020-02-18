@@ -1,27 +1,50 @@
 import { Component } from '@angular/core';
+// import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
+  // constructor(private http: HttpClient) { }
   title = '788 DB Guru!'
+  // configUrl = 'localhost:5000/get_question_and_answers';
+  // title = this.http.get(this.configUrl)
+
   question_index = 0
   db_mock = [
     {
-      'question': 'Size of DB',
+      'question': 'How much data do you plan on having?',
       'answers': [
-        'answer1',
-        'answer2'
+        'Up to 1GB',
+        'Up to 100GB',
+        'Up to 1TB',
+        'Above 1TB'
       ]
     },
     {
-      'question': 'Load in DB',
+      'question': 'Is your scheme dynamic',
       'answers': [
-        'answer3',
-        'answer2',
-        'answer1'
+        'Yes',
+        'No'
+      ]
+    },
+    {
+      'question': 'Will you need text index',
+      'answers': [
+        'False',
+        'True'
+      ]
+    },
+    {
+      'question': 'What is your SELECT rate',
+      'answers': [
+        '10 per minute',
+        '100 per minute',
+        '1000 per minute',
+        'Above 1000'
       ]
     }
   ]
@@ -29,7 +52,7 @@ export class AppComponent {
   get_final_answer() {
     this.db_mock = [
       {
-        'question': 'You sould use: ElasticSearch',
+        'question': 'You sould use: Oracle',
         'answers': []
       }
     ]
